@@ -1,0 +1,1537 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="qrichtext" content="1" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+</style></head><body style=" font-family:'Consolas'; font-size:10pt; font-weight:400; font-style:normal;">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Python 3.7.1 (default, Dec 10 2018, 22:54:23) [MSC v.1915 64 bit (AMD64)]</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Type &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">IPython 7.2.0 -- An enhanced Interactive Python.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br />Restarting kernel... </p>
+<hr />
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /> </p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">1</span><span style=" color:#000080;">]:</span> import numpy as np # linear algebra</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> import matplotlib.pyplot as plt</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> import seaborn as sn</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> import matplotlib.pyplot as plt</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> from scipy.stats import norm</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">2</span><span style=" color:#000080;">]:</span> data = pd.read_csv('C:\\Users\\GIM\\Desktop\\pyth\\train.csv')</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> data.head()</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> data.info()</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;class 'pandas.core.frame.DataFrame'&gt;</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">RangeIndex: 550068 entries, 0 to 550067</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Data columns (total 13 columns):</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">User_ID                       550068 non-null int64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Product_ID                    550068 non-null object</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Gender                        550068 non-null object</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Age                           550068 non-null object</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation                    550068 non-null int64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">City_Category                 550068 non-null object</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Stay_In_Current_City_Years    550068 non-null object</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Marital_Status                550068 non-null int64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Product_Category_1            550068 non-null int64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Product_Category_2            376430 non-null float64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Product_Category_3            166821 non-null float64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Purchase                      550068 non-null int64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Prod_ID                       550068 non-null int64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">dtypes: float64(2), int64(6), object(5)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">memory usage: 54.6+ MB</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">3</span><span style=" color:#000080;">]:</span> data = data.drop(['Product_ID'], axis= 1)</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">4</span><span style=" color:#000080;">]:</span> missing_values = data.isnull().sum().sort_values(ascending = False)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> data=data.fillna(0)</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">5</span><span style=" color:#000080;">]:</span> gender = np.unique(data['Gender'])</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> gender</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> age = np.unique(data['Age'])</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> age</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#8b0000;">Out[</span><span style=" font-weight:600; color:#8b0000;">5</span><span style=" color:#8b0000;">]:</span> </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">array(['0-17', '18-25', '26-35', '36-45', '46-50', '51-55', '55+'],</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">      dtype=object)</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">6</span><span style=" color:#000080;">]:</span> data['Gender1']=data.Gender.map({'F':0,'M':1})</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> data['Age1']=data.Age.map({'0-17':0,'18-25':1,'26-35':2,'36-45':3,'46-50':4,'51-55':5,'55+':6})</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">7</span><span style=" color:#000080;">]:</span> city_category = np.unique(data['City_Category'])</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> city_category</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> data['City_Category1']=data.City_Category.map({'A':0,'B':1,'C':2})</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">8</span><span style=" color:#000080;">]:</span> city_stay = np.unique(data['Stay_In_Current_City_Years'])</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> city_stay</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> data.loc[data.Stay_In_Current_City_Years=='4+','Stay_In_Current_City_Years']=5</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">9</span><span style=" color:#000080;">]:</span> data[['Age','Purchase']].groupby('Age')</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> sn.barplot('Age', 'Purchase', data = data)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> plt.show()</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">C:\Users\GIM\Anaconda3\lib\site-packages\scipy\stats\stats.py:1713: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">  return np.add.reduce(sorted[indexer] * weights, axis=axis) / sumval</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,
+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
+yb81196UzMxMhIeHIzw8HGVlZbe4B0RE1Bynh8qWLVvQq1cveHp64q677sKo
+UaOwa9cuVFRUoLq6GgBgtVrh4+MDoG4EUlJSAqBu2uzcuXPQ6/UN2q/vc73U
+1FRYLBZYLBZ4eno6eA+JiO5cTg+V7t27Y8+ePbh06RJEBFu3bkXv3r0xePBg
+5ObmAgCys7MxcuRIAEB8fDyys7MBALm5uRgyZAh0Oh3i4+ORk5ODK1euoKio
+CIWFhYiIiHD27hARUT1O/zrhyMhIJCQkoG/fvnBzc0NYWBhSU1PxyCOPIDEx
+EX/4wx8QFhaGSZMmAQAmTZqE8ePHw2g0Qq/XIycnBwBgNpsxZswY9O7dG25u
+bli2bBnatm3r7N0hIqJ6XPId9enp6UhPT2/Q5u/v3+TVWx06dMDq1aubXM/c
+uXMxd+5ch9RIREQ/H++oJyIiZRgqRESkDEOFiIiUYagQEZEyDBUiIlKGoUJE
+RMowVIiISBmGChERKcNQISIiZRgqRESkDEOFiIiUYagQEZEyDBUiIlKGoUJE
+RMowVIiISBmGChERKcNQISIiZRgqRESkDEOFiIiUYagQEZEyDBUiIlKGoUJE
+RMowVIiISBmGChERKcNQISIiZRgqRESkDEOFiIiUYagQEZEyDBUiIlKGoUJE
+RMowVIiISBmGChERKcNQISIiZRgqRESkDEOFiIiUcUmoVFRUICEhAQ888AAC
+AwOxe/dunD17FjExMTCZTIiJiUF5eTkAQEQwffp0GI1GhISE4MCBA9p6srOz
+YTKZYDKZkJ2d7YpdISKielwSKjNmzMCwYcNw5MgRfPXVVwgMDERGRgaio6NR
+WFiI6OhoZGRkAAA2btyIwsJCFBYWIjMzE2lpaQCAs2fPIj09HXv37sW+ffuQ
+np6uBREREbmG00Pl/Pnz+Pe//41JkyYBANq1a4fOnTsjLy8PycnJAIDk5GSs
+W7cOAJCXl4ekpCTodDoMGDAAFRUVKC0txaZNmxATEwO9Xo8uXbogJiYGBQUF
+zt4dIiKqx+5Q+fHHH7FlyxYAwOXLl3HhwoWb2uCxY8fg6emJiRMnIiwsDJMn
+T8ZPP/2EkydPwtvbGwDg7e2NU6dOAQBsNhv8/Py0/gaDATabrdn2pmRmZiI8
+PBzh4eEoKyu7qbqJiOjG7AqVt99+GwkJCZgyZQoAwGq14rHHHrupDVZXV+PA
+gQNIS0vDF198gY4dO2pTXU0RkUZtOp2u2fampKamwmKxwGKxwNPT86bqJiKi
+G7MrVJYtW4adO3fC3d0dAGAymbSRxM9lMBhgMBgQGRkJAEhISMCBAwfQtWtX
+lJaWAgBKS0vh5eWlLV9SUqL1t1qt8PHxabadiIhcx65Qad++Pdq1a6c9rq6u
+bnZUcCPdunWDn58fvvvuOwDA1q1b0bt3b8THx2tXcGVnZ2PkyJEAgPj4eKxc
+uRIigj179sDDwwPe3t6IjY3F5s2bUV5ejvLycmzevBmxsbE3VRMREanhZs9C
+UVFRWLhwIS5fvox//etfeOutt/Doo4/e9EbfeOMNjBs3DlevXoW/vz9WrFiB
+2tpajBkzBllZWejevTtWr14NAIiLi8OGDRtgNBpxzz33YMWKFQAAvV6PefPm
+oX///gCA+fPnQ6/X33RNRER06+wKlYyMDGRlZSE4OBh/+9vfEBcXh8mTJ9/0
+RkNDQ2GxWBq1b926tVGbTqfDsmXLmlxPSkoKUlJSbroOIiJSy65QadOmDZ56
+6ik89dRTOHv2LKxW601PfxER0S+XXedUBg0ahPPnz+Ps2bMIDQ3FxIkT8eyz
+zzq6NiIiamXsCpVz587B3d0da9euxcSJE7F//37tnhUiIqJr7AqV6upqlJaW
+4sMPP8SIESMcXRMREbVSdoXK/PnzERsbC6PRiP79++PYsWMwmUyOro2IiFoZ
+u07UP/7443j88ce1x/7+/lizZo3DiiIiotbJrlCprKxEVlYWDh06hMrKSq39
+3XffdVhhRETU+tg1/TV+/HicOHECmzZtQlRUFKxWKzp16uTo2oiIqJWxK1R+
++OEHvPzyy+jYsSOSk5ORn5+Pb775xtG1ERFRK2NXqNx1110AgM6dO+PgwYM4
+d+4ciouLHVkXERG1QnadU0lNTUV5eTlefvllxMfH4+LFi3jppZccXRsREbUy
+doXKtc/5ioqKwrFjxxxaEBERtV52hcqVK1ewZs0aFBcXo7q6WmufP3++wwoj
+IqLWx65QGTlyJDw8PNCvXz+0b9/e0TUREVErZVeoWK1WFBQUOLoWIiJq5ey6
++uvXv/41LyEmIqIbanGkEhwcDJ1Oh+rqaqxYsQL+/v5o3749RAQ6nQ5ff/21
+s+okIqJWoMVQWb9+vbPqICKiX4AWp7969OiBHj16oLS0FHq9Xnus1+tx4sQJ
+Z9VIRESthF3nVNLS0nDvvfdqjzt27Ii0tDSHFUVERK2TXaFy7RyK1qlNmwb3
+qxAREQF2hoq/vz+WLl2KqqoqVFVVYcmSJfD393d0bURE1MrYFSp//etfsWvX
+Lvj6+sJgMGDv3r3IzMx0dG1ERNTK3PDmx5qaGrz//vvIyclxRj1ERNSK3XCk
+0rZtW+Tl5TmjFiIiauXs+piWhx56CM888wzGjh2Ljh07au19+/Z1WGFERNT6
+2BUqu3btAtDwU4l1Oh22bdvmmKqIiKhVsitUPv30U0fXQUREvwB2hUpz3/LI
+71MhIqL67AqV+udRKisrsX79egQGBjqsKCIiap3sCpXf/e53DR4/99xziI+P
+d0hBRETUetl18+P1Ll26xO+qJyKiRuwaqVz7XhWg7mbIsrIynk8hIqJG7AqV
++t+r4ubmhq5du8LNza6uRER0B2lx+quyshKvv/46Xn31VRQUFMDX1xe+vr5K
+AqWmpgZhYWEYMWIEAKCoqAiRkZEwmUwYO3Ysrl69CgC4cuUKxo4dC6PRiMjI
+SBQXF2vrWLRoEYxGIwICArBp06ZbromIiG5Ni6GSnJwMi8WC4OBgbNy4sdEJ
++1uxZMmSBleQzZ49G7NmzUJhYSG6dOmCrKwsAEBWVha6dOmCH374AbNmzcLs
+2bMBAIcPH0ZOTg4OHTqEgoICTJ06FTU1NcrqIyKin6/FUDl8+DD+8Y9/YMqU
+KcjNzcWOHTuUbNRqtSI/Px+TJ08GUPd9Ldu2bUNCQgKAujBbt24dACAvLw/J
+yckAgISEBGzduhUigry8PCQmJqJ9+/bo1asXjEYj9u3bp6Q+IiK6OS2Gyl13
+3aX9rvIcysyZM7F48WK0aVO3+TNnzqBz587aNgwGA2w2GwDAZrPBz89Pq8HD
+wwNnzpxp0H59n+tlZmYiPDwc4eHhKCsrU7YfRETUUIuh8tVXX8Hd3R3u7u7o
+1KkTvv76a+13d3f3m9rg+vXr4eXlhX79+mltItJouWtXmzX3t5b6XC81NRUW
+iwUWiwWenp43VTcREd1Yi8MPR5yj2LlzJz7++GNs2LABlZWVOH/+PGbOnImK
+igpUV1fDzc0NVqsVPj4+AOpGICUlJTAYDKiursa5c+eg1+u19mvq9yEiIte4
+qZsfb8WiRYtgtVpRXFyMnJwcDBkyBO+//z4GDx6M3NxcAEB2djZGjhwJAIiP
+j0d2djYAIDc3F0OGDIFOp0N8fDxycnJw5coVFBUVobCwEBEREc7eHSIique2
+udnklVdeQWJiIv7whz8gLCwMkyZNAgBMmjQJ48ePh9FohF6v176B0mw2Y8yY
+Mejduzfc3NywbNkytG3b1pW7QER0x3NpqAwaNAiDBg0CAPj7+zd59VaHDh2w
+evXqJvvPnTsXc+fOdWSJRET0Mzh9+ouIiH65GCpERKQMQ4WIiJRhqBARkTIM
+FSIiUoahQkREyjBUiIhIGYYKEREpw1AhIiJlGCpERKQMQ4WIiJRhqBARkTIM
+FSIiUoahQkREyjBUiIhIGYYKEREpw1AhIiJlGCpERKQMQ4WIiJRhqBARkTIM
+FSIiUoahQkREyjBUiIhIGYYKEREpw1AhIiJlGCpERKQMQ4WIiJRhqBARkTIM
+FSIiUoahQkREyjBUiIhIGYYKEREpw1AhIiJlGCpERKSM00OlpKQEgwcPRmBg
+IMxmM5YsWQIAOHv2LGJiYmAymRATE4Py8nIAgIhg+vTpMBqNCAkJwYEDB7R1
+ZWdnw2QywWQyITs729m7QkRE13F6qLi5ueG1117Dt99+iz179mDZsmU4fPgw
+MjIyEB0djcLCQkRHRyMjIwMAsHHjRhQWFqKwsBCZmZlIS0sDUBdC6enp2Lt3
+L/bt24f09HQtiIiIyDWcHire3t7o27cvAKBTp04IDAyEzWZDXl4ekpOTAQDJ
+yclYt24dACAvLw9JSUnQ6XQYMGAAKioqUFpaik2bNiEmJgZ6vR5dunRBTEwM
+CgoKnL07RERUj0vPqRQXF+OLL75AZGQkTp48CW9vbwB1wXPq1CkAgM1mg5+f
+n9bHYDDAZrM1205ERK7j5qoNX7x4EaNHj8brr78Od3f3ZpcTkUZtOp2u2fam
+ZGZmIjMzEwBQVlZ2kxUTEdGNuGSkUlVVhdGjR2PcuHEYNWoUAKBr164oLS0F
+AJSWlsLLywtA3QikpKRE62u1WuHj49Nse1NSU1NhsVhgsVjg6enpqN0iIrrj
+OT1URASTJk1CYGAgnn32Wa09Pj5eu4IrOzsbI0eO1NpXrlwJEcGePXvg4eEB
+b29vxMbGYvPmzSgvL0d5eTk2b96M2NhYZ+8OERHV4/Tpr507d+K9995DcHAw
+QkNDAQALFy7EnDlzMGbMGGRlZaF79+5YvXo1ACAuLg4bNmyA0WjEPffcgxUr
+VgAA9Ho95s2bh/79+wMA5s+fD71e7+zdISKiepweKgMHDmzyfAgAbN26tVGb
+TqfDsmXLmlw+JSUFKSkpSusjIqKbxzvqiYhIGYYKEREpw1AhIiJlGCpERKQM
+Q4WIiJRhqBARkTIMFSIiUoahQkREyjBUiIhIGYYKEREpw1AhIiJlGCpERKQM
+Q4WIiJRhqBARkTIMFSIiUoahQkREyjBUiIhIGYYKEREpw1AhIiJlGCpERKQM
+Q4WIiJRhqBARkTIMFSIiUoahQkREyjBUiIhIGYYKEREpw1AhIiJlGCpERKQM
+Q4WIiJRhqBARkTIMFSIiUoahQkREyjBUiIhIGYYKEREp0+pDpaCgAAEBATAa
+jcjIyHB1OUREd7RWHSo1NTV4+umnsXHjRhw+fBirVq3C4cOHXV0WEdEdq1WH
+yr59+2A0GuHv74927dohMTEReXl5ri6LiOiO1apDxWazwc/PT3tsMBhgs9lc
+WBER0Z3NzdUF3AoRadSm0+katWVmZiIzMxMAcOTIEYSHh//f8grrKSsrg6en
+p7L1hYcvtWOp9sq2p7T+j8NvvIxiKusPz27d9SO8ddf/9/B0Jev5OVTW/5GT
+n3/Vrz34qOHD4uJiu7u26lAxGAwoKSnRHlutVvj4+DRaLjU1FampqQ6vJzw8
+HBaLxeHbcRTW71qs37Vac/23U+2tevqrf//+KCwsRFFREa5evYqcnBzEx8e7
+uiwiojtWqx6puLm54c0330RsbCxqamqQkpICs9ns6rKIiO5YbRcsWLDA1UXc
+CpPJhGnTpmHGjBl4+OGHXV0O+vXr5+oSbgnrdy3W71qtuf7bpXadNHW2m4iI
+6Ca06nMqRER0e2Go2Mmej4MZNmwYOnfujBEjRjRo/+///m+EhoYiNDQUPj4+
+eOyxx5xRciM9e/ZEcHAwQkNDtcuqFyxYAF9fX62+DRs2uKS2+kpKSjB48GAE
+BgbCbDZjyZIl2t/eeOMNBAQEwGw244UXXmiy/7x58xASEoLQ0FAMHToUx48f
+BwBs374dHh4e2r6+9NJLDt2PmpoahIWFaceDiGDu3Lm4//77ERgYiKVLm75k
+fMKECejVq5dW55dffqn1nz59OoxGI0JCQnDgwAGH1d7UsbJ69WqYzWa0adOm
+xSuNmjumiouLcffdd2vtv/3tbx1Se2VlJSIiItCnTx+YzWa8+OKLAOx//q+Z
+Nm0a7r33Xu3x3//+d3h6emr1v/POOw6pPyUlBV5eXggKCtLavvzySwwYMED7
+99i3b1+TfceNG4eAgAAEBQUhJSUFVVVVAJx87AvdUHV1tfj7+8vRo0flypUr
+EhISIocOHWq03JYtW+Tjjz+WRx55pNl1jRo1SrKzsx1ZbrN69OghZWVlDdpe
+fPFFefXVV1vs9+KLL8qKFSscWFlDx48fl/3794uIyPnz58VkMsmhQ4dk27Zt
+Eh0dLZWVlSIicvLkySb7nzt3Tvt9yZIlMmXKFBER+fTTT1v8t1Httddekyee
+eELb5rvvvivjx4+XmpoaEWm+/uTkZFm9enWj9vz8fBk2bJjU1tbK7t27JSIi
+wmG1N3WsHD58WI4cOSJRUVHy+eefN9u3uWOqqKhIzGaz8lqvV1tbKxcuXBAR
+katXr0pERITs3r3b7udfROTzzz+XJ598Ujp27Ki1rVixQp5++mnHFi8in332
+mezfv7/BcxUTEyMbNmwQkbrjICoqqsm++fn5UltbK7W1tZKYmChvvfWWiDj3
+2OdIxQ72fhxMdHQ0OnXq1Ox6Lly4gG3btrlspNJaeHt7o2/fvgCATp06ITAw
+EDabDcuXL8ecOXPQvn3dDZ9eXl5N9nd3d9d+/+mnn5q8IdbRrFYr8vPzMXny
+ZK1t+fLlmD9/Ptq0qftv11z9zcnLy0NSUhJ0Oh0GDBiAiooKlJaWKq27JYGB
+gQgICHDa9m6WTqfTRhhVVVWoqqqCTqez+/mvqanB888/j8WLFzut5voefvhh
+6PX6Bm06nQ7nz58HAJw7d67J+/EAIC4uDjqdDjqdDhEREbBarQ6v93oMFTuo
++jiYjz76CNHR0Q1e9JxJp9Nh6NCh6Nevn/YJAwDw5ptvIiQkBCkpKSgvL3dJ
+bc0pLi7GF198gcjISHz//ffYsWMHIiMjERUVhc8//7zZfnPnzoWfnx/ef//9
+BkP93bt3o0+fPhg+fDgOHTrksLpnzpyJxYsXay9gAHD06FF88MEHCA8Px/Dh
+w1FYWNhi/SEhIZg1axauXLkCwLkfS9TcsWKv5o6poqIihIWFISoqCjt27FBZ
+cgM1NTUIDQ2Fl5cXYmJiEBkZaffz/+abbyI+Ph7e3t6N/rZmzRqEhIQgISGh
+wY3Xjvb666/j+eefh5+fH5577jksWrSoxeWrqqrw3nvvYdiwYVqbs459Tn/Z
+4cMPP5RJkyZpj1euXCnPPPNMk8u2NMwcNmyY5ObmOqRGe9hsNhGpG/aHhITI
+Z599JidOnJDq6mqpqamR3//+9zJx4kQREfn666+lT58+0qdPH+natav4+flp
+j0+fPu2Uei9cuCB9+/aVNWvWiIiI2WyWadOmSW1trezdu1d69uwptbW1La5j
+4cKFMn/+fBGpmxa7Ni2Sn58vRqPRIXV/8sknkpaWJiINj4eOHTvKn/70JxER
+WbNmjQwcOLDJ/sePH5fa2lqprKyUpKQkSU9PFxGRuLg42bFjh7bckCFDxGKx
+OGQfmjpWrrnR9Fdzx1RlZaV27FgsFjEYDA2mKh2hvLxcBg0aJN98841dz7/N
+ZpOHHnpIqqqqREQaTH+dPn1am3pdvny5DB482GF1Xz9VOG3aNO2144MPPpDo
+6OgW+0+ePFlmzJihPXbWsS8iwlCxw65du2To0KHa44ULF8qCBQu0F9m8vDzt
+b82FyunTp0Wv18vly5edUvONNDXv3dyct7PPqYjUzYUPHTpUXnvtNa0tNjZW
+Pv30U+2xv7+/nDp1SiZMmCB9+vSR4cOHN1pPcXFxs/P4TZ03UGHOnDni6+sr
+PXr0kK5du8rdd98t48aNk4CAACkqKhKRunl/d3d3EREZOnSo9OnTp8Ebl2vq
+H0+pqanyz3/+U/vb/fffL8ePH1de//WuP1auD5WWnv+WzqPcKJxUWbBggbz6
+6qt2Pf/r16+Xrl27So8ePaRHjx6i0+nkV7/6VaN1VldXa/0d4frnzd3dXXsD
+VVtbK506dWpU+zULFiyQkSNHaueOmuKoY1+EoWKXqqoq6dWrlxw7dkw7UX/w
+4MEml20uVJYvXy5JSUmOLrVZFy9elPPnz2u/P/jgg7Jx48YGL0p//vOfZezY
+sY36OjtUamtrZfz48Q3eaYnUPYfz5s0TEZHvvvtODAZDkyOV77//Xvt96dKl
+Mnr0aBERKS0t1Zbfu3ev+Pn53XCkc6vqHw+zZ8+WrKwsrT08PLzJPtf+TWpr
+a2XGjBkye/ZsERFZv359gxP1/fv3d0jNzR0r19woDJo7pk6dOiXV1dUiInL0
+6FHx8fGRM2fOKK//1KlTUl5eLiIily5dkoEDB8onn3xi9/NfX/2RSv39Wrt2
+rURGRiqu/P9cHyoPPPCA9oZqy5Yt0rdv3yb7vf322/Lggw/KpUuXGrQ789hn
+qNgpPz9fTCaT+Pv7yx//+Mcmlxk4cKDcd9990qFDB/H19ZWCggLtb1FRUQ3+
+Yzrb0aNHJSQkREJCQqR3797aPjz55JMSFBQkwcHB8uijjzb5ztfZobJjxw4B
+IMHBwdpoMD8/X65cuSLjxo0Ts9ksYWFhsnXr1ib7jxo1SsxmswQHB8uIESPE
+arWKiMgbb7whvXv3lpCQEImMjJSdO3c6fF/qh0p5ebnExcVJUFCQDBgwQL78
+8ssm+wwePFiCgoLEbDbLuHHjtGmL2tpamTp1qvj7+0tQUJDD3uU3d6ysXbtW
+qqZfawAAApVJREFUfH19pV27duLl5dVg9F5fc8dUbm6u9vyHhYXJxx9/7JD6
+v/rqKwkNDZXg4GAxm83a9KG9z3999UNlzpw5Wv2DBg2Sb7/91iH1JyYmSrdu
+3cTNzU18fX3lnXfekR07dkjfvn0lJCREIiIimp32bNu2rfj7+2v/b67tuzOP
+fd5RT0REyvDqLyIiUoahQkREyjBUiIhIGYYKEREpw1AhIiJlGCpETvLRRx9B
+p9PhyJEjri6FyGEYKkROsmrVKgwcOBA5OTmuLoXIYRgqRE5w8eJF7Ny5E1lZ
+WVqo1NbWYurUqTCbzRgxYgTi4uKQm5sLANi/fz+ioqLQr18/xMbGOvXTiIlu
+BUOFyAnWrVuHYcOG4f7774der8eBAwewdu1aFBcX45tvvsE777yD3bt3A6j7
+hNlp06YhNzcX+/fvR0pKCubOneviPSCyj5urCyC6E6xatQozZ84EACQmJmLV
+qlWoqqrC448/jjZt2qBbt24YPHgwAOC7777DwYMHERMTA6DuY9yb+hh2otsR
+Q4XIwc6cOYNt27bh4MGD0Ol0qKmpgU6nw29+85smlxcRmM1mbeRC1Jpw+ovI
+wXJzc5GUlIQff/wRxcXFKCkpQa9evXDfffdhzZo1qK2txcmTJ7F9+3YAQEBA
+AMrKyhpMhzn0S5WIFGKoEDnYqlWrGo1KRo8ejePHj8NgMCAoKAhTpkxBZGQk
+PDw80K5dO+Tm5mL27Nno06cPQkNDsWvXLhdVT/Tz8FOKiVzo4sWLuPfee3Hm
+zBlERERg586d6Natm6vLIrppPKdC5EIjRoxARUUFrl69innz5jFQqNXjSIWI
+iJThORUiIlKGoUJERMowVIiISBmGChERKcNQISIiZRgqRESkzP8Hk++7paZ+
+vd4AAAAASUVORK5CYII=
+" /></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,
+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
+1q29NQcAoJ/o8VLV8OHDNXz4cDU0NMhqtfoeW61WnTp1qrdmBAD0IX7d41iy
+ZIluv/123+OIiAgtWbIkYEMBAPouv8Lx2T0N30a33HLZ+zkAAAOHX+FISkrS
+2rVrdenSJV26dElr1qxRUlJSoGcDAPRBfoXjN7/5jfbt26e4uDjFx8frwIED
+cjgcgZ4NANAHXfcNgJ2dnXrzzTdVVlbWG/MAAPq4655xhISEyOl09sYsAIB+
+wK+PHJkyZYp++MMfau7cuYqIiPAtT09PD9hgAIC+ya9w7Nu3T9Lln4ZrsVi0
+e/fuwEwFAOiz/ArHn/70p0DPAQDoJ/wKR3ff9sf3cQDAwONXOD5/X6O9vV1b
+t25VSkpKwIYCAPRdfoXjxz/+8WWPly1bppycnIAMBADo2/x6A+CVLly4wHeP
+A8AA5dcZx2ffyyF1vSGwsbGR+xsAMED5FY7Pfy9HaGiohg0bptBQvzZVZ2en
+7Ha74uLitHXrVlVXVysvL09NTU1KT0/XG2+8obCwMHV0dGjBggU6ePCgvvrV
+r+r3v/+9RowYIUl64YUXVFJSopCQEK1du1bZ2dnmRwoAuCl6vFTV3t6uV155
+RS+//LLKy8sVFxenuLg4v6MhSWvWrLnsRvry5cu1dOlSud1uRUVFqaSkRJJU
+UlKiqKgonThxQkuXLtXy5cslSVVVVSorK9Px48dVXl6uRx99VJ2dnV/kWAEA
+N0GP4cjPz5fL5VJaWpp27Nhx1U3y66mrq9O2bdu0aNEiSV0fz757927l5ub6
+9r9lyxZJktPpVH5+viQpNzdXFRUV8nq9cjqdysvLU3h4uEaOHCmbzabKykrj
+AwUA3Bw9njpUVVXp6NGjkqTCwkJNmjTJaOdPPvmkXnrpJZ07d06SdObMGQ0Z
+MsR3xhIfH6/6+npJUn19vRISErqGCg1VZGSkzpw5o/r6ek2ePNm3z89v83kO
+h8P3ib2NjY1GcwIA/NfjGcegQYN8fze5PCV13RcZOnSoJk6c6Fvm9XqvWu+z
+m+7d/aynbT6vqKhILpdLLpdL0dHRRrMCAPzXYw0++OADDR48WFLXE3tbW5sG
+Dx7s+0bA1tbWbrfdu3ev3nnnHW3fvl3t7e1qbW3Vk08+qZaWFnk8HoWGhqqu
+rk6xsbGSus4kamtrFR8fL4/Ho7Nnz8pqtfqWf+bz2wAAel+PZxydnZ1qbW1V
+a2urzp07J4/H4/t7T9GQul4JVVdXp5qaGpWVlWn69Ol68803NW3aNG3atEmS
+VFpaqlmzZkmScnJyVFpaKknatGmTpk+fLovFopycHJWVlamjo0PV1dVyu93G
+l8wAADeP2fWnm+DFF19UXl6ennnmGU2YMEGFhYWSuu6hzJ8/XzabTVar1ffF
+UampqZozZ47GjBmj0NBQFRcXKyQkpLfHBgD8P4v3WjcR+jm73S6Xy3VD+5j4
+9IabNA2+TA6+vCDYI+ijZ9OCPQL6oMSVR294H/4+d36hjxwBAAxchAMAYIRw
+AACMEA4AgBHCAQAwQjgAAEYIBwDACOEAABghHAAAI4QDAGCEcAAAjBAOAIAR
+wgEAMEI4AABGCAcAwAjhAAAYIRwAACOEAwBghHAAAIwQDgCAEcIBADBCOAAA
+RggHAMAI4QAAGCEcAAAjhAMAYIRwAACMEA4AgBHCAQAwQjgAAEYIBwDACOEA
+ABghHAAAI4QDAGAkYOGora3VtGnTlJKSotTUVK1Zs0aS1NTUpKysLCUnJysr
+K0vNzc2SJK/Xq8cff1w2m03jxo3ToUOHfPsqLS1VcnKykpOTVVpaGqiRAQB+
+CFg4QkND9ctf/lL/+Mc/tH//fhUXF6uqqkqrV6/WjBkz5Ha7NWPGDK1evVqS
+tGPHDrndbrndbjkcDi1ZskRSV2hWrVqlAwcOqLKyUqtWrfLFBgDQ+wIWjpiY
+GKWnp0uS7rjjDqWkpKi+vl5Op1P5+fmSpPz8fG3ZskWS5HQ6tWDBAlksFk2e
+PFktLS1qaGjQzp07lZWVJavVqqioKGVlZam8vDxQYwMArqNX7nHU1NTo8OHD
+yszM1OnTpxUTEyOpKy4ff/yxJKm+vl4JCQm+beLj41VfX9/tcgBAcIQG+hd8
++umneuihh/TKK69o8ODB3a7n9XqvWmaxWLpdfiWHwyGHwyFJamxsvIGJAQA9
+CegZx6VLl/TQQw9p3rx5evDBByVJw4YNU0NDgySpoaFBQ4cOldR1JlFbW+vb
+tq6uTrGxsd0uv1JRUZFcLpdcLpeio6MDeVgAMKAFLBxer1eFhYVKSUnRU089
+5Vuek5Pje2VUaWmpZs2a5Vu+YcMGeb1e7d+/X5GRkYqJiVF2drZ27dql5uZm
+NTc3a9euXcrOzg7U2ACA6wjYpaq9e/fqjTfeUFpamsaPHy9Jev755/XTn/5U
+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
+u9q0ildHtgUAAAAASUVORK5CYII=
+" /></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">10</span><span style=" color:#000080;">]:</span> data[['Gender','Purchase']].groupby('Gender')</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> sn.barplot('Gender', 'Purchase', data = data)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">   ...:</span> plt.show()</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">11</span><span style=" color:#000080;">]:</span> data[['City_Category','Purchase']].groupby('City_Category')</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span> sn.barplot('City_Category', 'Purchase', data = data)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span> plt.show()</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAZUAAAELCAYAAAARNxsIAAAACXBIWXMAAAsS
+AAALEgHS3X78AAAAO3pUWHRTb2Z0d2FyZQAACJnLTSwpyMkvyclMUihLLSrO
+zM9TMNYz0DPSUcgoKSmw0tfPhSvQyy9K1wcApwUQ8aaEwSQAAB0ZSURBVHic
+7d1/XJX1/f/x50nUpSlyCg0DUzpnpfgDFMWtH/6KL0UNp6HiWlJoNKuP081P
+1vxxi9qS1Vbq5q12upHhZtKkBd1K0UKbpakdLZeSC1McnEBRwd+i4Pv7h5/O
+NNGOeMHxyOP+j54357rO64pbPm7Xuc4PmzHGCAAAC1zl7wEAAFcOogIAsAxR
+AQBYhqgAACxDVAAAliEqAADLEBUAgGWICgDAMkQFAGCZIH8P0NSuu+46de3a
+1d9jAEDAKCkp0d69e326b7OLSteuXeV2u/09BgAEjNjYWJ/v22hPf6Wlpalj
+x47q2bOnd23//v2Kj4+X0+lUfHy8qqqqJEnGGE2aNEkOh0O9e/fWpk2bvNtk
+Z2fL6XTK6XQqOzvbu75x40b16tVLDodDkyZNEh9hBgD+12hRefDBB1VQUHDW
+WmZmpoYNG6bi4mINGzZMmZmZkqRly5apuLhYxcXFcrlcmjhxoqTTEcrIyND6
+9eu1YcMGZWRkeEM0ceJEuVwu73bffSwAQNNrtKjccccdstvtZ63l5+crNTVV
+kpSamqq8vDzv+rhx42Sz2TRw4EBVV1ervLxcy5cvV3x8vOx2u0JCQhQfH6+C
+ggKVl5fr4MGD+tGPfiSbzaZx48Z59wUA8J8mvaaye/duhYWFSZLCwsK0Z88e
+SZLH41FERIT3fuHh4fJ4PBdcDw8PP2f9fFwul1wulySpsrLS0mMCAPzXZfGS
+4vquh9hstoteP5/09HS53W653W6FhoZe2rAAgPNq0qh06tRJ5eXlkqTy8nJ1
+7NhR0ukzjdLSUu/9ysrK1Llz5wuul5WVnbMOAPCvJo1KUlKS9xVc2dnZGj58
+uHd94cKFMsZo3bp1Cg4OVlhYmBISErRixQpVVVWpqqpKK1asUEJCgsLCwtSu
+XTutW7dOxhgtXLjQuy8AgP802jWVsWPH6sMPP9TevXsVHh6ujIwMPfnkkxo9
+erSysrLUpUsXLVmyRJKUmJiopUuXyuFwqE2bNlqwYIEkyW63a+bMmerfv78k
+adasWd6L/y+//LIefPBBHTt2THfffbfuvvvuxjoUAICPbM3tO+pjY2N58yMu
+O0888YQqKip0/fXX6/nnn/f3OMBZLubfzWb3jno0D/95ppe/R7goZUV27T4W
+pNr9uwJq9i6zvvD3CLjMXBav/gIAXBk4UwEuA9f94JSk2v/7EwhcRAW4DEzt
+Xe3vEQBL8PQXAMAyRAUAYBmiAgCwDFEBAFiGqAAALENUAACWISoAAMvwPhUA
+uER8dtt/ERUAl51b/3Srv0e4KK22tdJVR65SaXVpwMy+5n/WNMp+efoLAGAZ
+zlQA4BKZNkandEqmTbP6JpF6ERUAuEQnbz3p7xEuG0TlCsGFQgCXA6Jyhaio
+qJDH4/H3GACaOaJyAf3+d6G/R/BZu72H1ELSf/YeCqi5N74wzt8jALAQUblC
+nGrV9qw/AcAfiMoV4ojz//l7BADgfSoAAOsQFQCAZYgKAMAyRAUAYBmiAgCw
+DFEBAFiGqAAALENUAACWISoAAMsQFQCAZYgKAMAyRAUAYBm/ROWll15SVFSU
+evbsqbFjx+r48ePauXOn4uLi5HQ6NWbMGJ04cUKSVFNTozFjxsjhcCguLk4l
+JSXe/cyePVsOh0M333yzli9f7o9DAQCcocmj4vF4NG/ePLndbm3ZskV1dXXK
+ycnRtGnTNGXKFBUXFyskJERZWVmSpKysLIWEhGj79u2aMmWKpk2bJkkqKipS
+Tk6Otm7dqoKCAj366KOqq6tr6sMBAJzBL2cqtbW1OnbsmGpra3X06FGFhYVp
+5cqVSk5OliSlpqYqLy9PkpSfn6/U1FRJUnJysgoLC2WMUX5+vlJSUtS6dWt1
+69ZNDodDGzZs8MfhAAD+T5NH5YYbbtDUqVPVpUsXhYWFKTg4WP369VOHDh0U
+FHT6613Cw8O9X43r8XgUEREhSQoKClJwcLD27dt31vp3twEA+EeTR6Wqqkr5
++fnauXOnvvnmGx05ckTLli075342m02SZIyp92fnW6+Py+VSbGysYmNjVVlZ
+eYlHAAA4nyaPygcffKBu3bopNDRULVu21MiRI7V27VpVV1ertrZWklRWVqbO
+nTtLOn0GUlpaKun002YHDhyQ3W4/a/2723xXenq63G633G63QkNDG/kIAaD5
+avKodOnSRevWrdPRo0dljFFhYaF69OihIUOGKDc3V5KUnZ2t4cOHS5KSkpKU
+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
+" /></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">12</span><span style=" color:#000080;">]:</span> data=pd.get_dummies(data, columns=['Occupation'])</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span> data.columns</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#8b0000;">Out[</span><span style=" font-weight:600; color:#8b0000;">12</span><span style=" color:#8b0000;">]:</span> </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Index(['User_ID', 'Gender', 'Age', 'City_Category',</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">       'Stay_In_Current_City_Years', 'Marital_Status', 'Product_Category_1',</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">       'Product_Category_2', 'Product_Category_3', 'Purchase', 'Prod_ID',</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">       'Gender1', 'Age1', 'City_Category1', 'Occupation_0', 'Occupation_1',</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">       'Occupation_2', 'Occupation_3', 'Occupation_4', 'Occupation_5',</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">       'Occupation_6', 'Occupation_7', 'Occupation_8', 'Occupation_9',</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">       'Occupation_10', 'Occupation_11', 'Occupation_12', 'Occupation_13',</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">       'Occupation_14', 'Occupation_15', 'Occupation_16', 'Occupation_17',</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">       'Occupation_18', 'Occupation_19', 'Occupation_20'],</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">      dtype='object')</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">13</span><span style=" color:#000080;">]:</span> plt.boxplot(data['Purchase'])</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span> plt.show()</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAYcAAAD8CAYAAACcjGjIAAAACXBIWXMAAAsS
+AAALEgHS3X78AAAAO3pUWHRTb2Z0d2FyZQAACJnLTSwpyMkvyclMUihLLSrO
+zM9TMNYz0DPSUcgoKSmw0tfPhSvQyy9K1wcApwUQ8aaEwSQAABLgSURBVHic
+7d1fSFxnwsfx32mkhXST1CEqY8dgw5l1jZq17dgkN4Hgzs5GlpEmizVbUDFU
+1i0IbRe2F0023rTTi0ILCaUDEsbCRjaFOjc6utDNTcAMp6k367I7FAM6OySm
+GUmzlNrIvBfyHjb7aMY/k47G7wcC5sk5x+dAO985/2asXC6XEwAA/+WJYk8A
+ALD5EAcAgIE4AAAMxAEAYCAOAAADcQAAGIgDAMCQNw4zMzM6duyYamtrVVdX
+p48++kiSdO7cOT377LNqbGxUY2OjRkZG3HXee+892batmpoajY2NueOJREI1
+NTWybVuRSMQdn56e1qFDh+T3+/XKK69oYWGhkPsIAFgjK99DcJlMRplMRi+8
+8IK+/fZbvfjiixoeHtZf/vIX/eQnP9Ef/vCHB5afmprSqVOnlEwm9e9//1u/
++MUv9K9//UuS9NOf/lR//etf5fP51NTUpEuXLunAgQNqa2vTiRMn1N7ert/9
+7nf6+c9/rt7e3ke31wCAhyrJt4DX65XX65Uk7dq1S7W1tUqn0ysuH4/H1d7e
+rqeeekrPPfecbNtWMpmUJNm2rf3790uS2tvbFY/HVVtbqy+++EJ//vOfJUmd
+nZ06d+5c3jjs3btX1dXVq9pJAMCSGzdu6Pbt23mXyxuH/93oV199pUOHDunq
+1as6f/68BgcHFQgE9MEHH6i0tFTpdFqHDx921/H5fG5MqqqqHhi/du2avvnm
+Gz3zzDMqKSkxln+Y6upqOY6zlukDwLYXCARWtdyqL0jfu3dPJ0+e1Icffqjd
+u3ert7dXX3/9tSYnJ+X1evXWW29JkpY7S2VZ1prHlxONRhUIBBQIBDQ3N7fa
+qQMA1mhVcfjhhx908uRJvfrqqzpx4oQkqaKiQjt27NATTzyh1157zT115PP5
+NDMz4647OzurysrKFcf37t2r+fl53b9//4Hx5fT09MhxHDmOo7KysvXtMQAg
+r7xxyOVyOn36tGpra/Xmm2+645lMxv35888/V319vSQpHA5raGhI33//vaan
+p5VKpfTSSy+pqalJqVRK09PTWlhY0NDQkMLhsCzL0rFjx/TZZ59JkmKxmFpb
+Wwu9nwCANch7zeHq1av69NNP1dDQoMbGRknSu+++q0uXLmlyclKWZam6ulqf
+fPKJJKmurk5tbW06cOCASkpKdOHCBe3YsUOSdP78eYVCIS0uLqq7u1t1dXWS
+pPfff1/t7e1655139Pzzz+v06dOPan8BAKuQ91bWzSoQCHBBGgDWaLWvnWu6
+WwnAypa7kWKLvvcC+PgMoBBWusNupXFgsyMOAAADcQAAGIgDAMBAHAAABuIA
+ADAQBwCAgTgAAAzEAQBgIA4AAANxAAAYiAMAwEAcAAAG4gAAMBAHAICBOAAF
+8PTTT69pHNjsiANQAPfu3TNC8PTTT+vevXtFmhGwMXwTHFAghACPE44cAAAG
+jhyAAuE7pPE44cgBKAC+QxqPG+IAADBwWgkooP8+jcRRA7Yy4gDksZYX+eWW
+Xe36XJ/AZkIcgDxW86L9sADwoo+tiGsOAAADcQAKYKWjA44asFVxWgkokP8P
+gWVZRAFbHkcOAAADcQAAGIgDAMCQNw4zMzM6duyYamtrVVdXp48++kiSdOfO
+HQWDQfn9fgWDQWWzWUlL5137+vpk27YOHjyo69evu9uKxWLy+/3y+/2KxWLu
++JdffqmGhgbZtq2+vj7O1wJAkeWNQ0lJiT744AP94x//0MTEhC5cuKCpqSlF
+IhE1NzcrlUqpublZkUhEkjQ6OqpUKqVUKqVoNKre3l5JSzHp7+/XtWvXlEwm
+1d/f7walt7dX0WjUXS+RSDzCXQYA5JM3Dl6vVy+88IIkadeuXaqtrVU6nVY8
+HldnZ6ckqbOzU8PDw5KkeDyujo4OWZalw4cPa35+XplMRmNjYwoGg/J4PCot
+LVUwGFQikVAmk9Hdu3d15MgRWZaljo4Od1sAgOJY0zWHGzdu6KuvvtKhQ4d0
+8+ZNeb1eSUsBuXXrliQpnU6rqqrKXcfn8ymdTj903OfzGeMAgOJZ9XMO9+7d
+08mTJ/Xhhx9q9+7dKy633PWCle77ftj4cqLRqKLRqCRpbm5utVMHAKzRqo4c
+fvjhB508eVKvvvqqTpw4IUmqqKhQJpORJGUyGZWXl0taeuc/MzPjrjs7O6vK
+ysqHjs/Ozhrjy+np6ZHjOHIcR2VlZWvcVQDAauWNQy6X0+nTp1VbW6s333zT
+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
+" /></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">14</span><span style=" color:#000080;">]:</span> def remove_outlier(data, Purchase):</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     q1 = data[Purchase].quantile(0.25)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     q3 = data[Purchase].quantile(0.75)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     iqr = q3-q1 #Interquartile range</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     fence_low  = q1-1.5*iqr</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     fence_high = q3+1.5*iqr</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     df_out = data.loc[(data[Purchase] &gt; fence_low) &amp; (data[Purchase] &lt; fence_high)]</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     return df_out</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">15</span><span style=" color:#000080;">]:</span> data_new = remove_outlier(data,'Purchase')</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span> print(data_new)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">        User_ID Gender      ...      Occupation_19 Occupation_20</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0       1000001      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1       1000001      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2       1000001      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3       1000001      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4       1000002      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5       1000003      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">6       1000004      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">7       1000004      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">8       1000004      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">9       1000005      M      ...                  0             1</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">10      1000005      M      ...                  0             1</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">11      1000005      M      ...                  0             1</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">12      1000005      M      ...                  0             1</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">13      1000005      M      ...                  0             1</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">14      1000006      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">15      1000006      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">16      1000006      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">17      1000006      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">18      1000007      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">19      1000008      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">20      1000008      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">21      1000008      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">22      1000008      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">23      1000008      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">24      1000008      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">25      1000009      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">26      1000009      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">27      1000009      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">28      1000009      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">29      1000010      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">...         ...    ...      ...                ...           ...</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550038  1005995      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550039  1005996      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550040  1005997      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550041  1006000      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550042  1006002      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550043  1006003      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550044  1006004      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550045  1006005      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550046  1006006      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550047  1006009      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550048  1006010      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550049  1006011      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550050  1006012      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550051  1006013      F      ...                  0             1</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550052  1006016      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550053  1006017      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550054  1006018      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550055  1006019      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550056  1006022      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550057  1006023      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550058  1006024      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550059  1006025      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550060  1006026      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550061  1006029      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550062  1006032      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550063  1006033      M      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550064  1006035      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550065  1006036      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550066  1006038      F      ...                  0             0</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">550067  1006039      F      ...                  0             0</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">[547391 rows x 35 columns]</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">16</span><span style=" color:#000080;">]:</span> plt.boxplot(data_new['Purchase'])</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span> plt.show()</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAYcAAAD8CAYAAACcjGjIAAAACXBIWXMAAAsS
+AAALEgHS3X78AAAAO3pUWHRTb2Z0d2FyZQAACJnLTSwpyMkvyclMUihLLSrO
+zM9TMNYz0DPSUcgoKSmw0tfPhSvQyy9K1wcApwUQ8aaEwSQAAA+9SURBVHic
+7d1fSFv3/8fx1/lN+oVC1xmqEheLKwld5x/cFtf2plAky5ShdB3ObqBimeAK
+QreL9WLtd7nZsovBBi1lASlxFxU6mN5o9GLrTcFK2nkzxwjDgoagdka6jbKu
+cn4XhfDb712r9U+j9fmAgv30JHkf2PI05+Qkjuu6rgAA+D/+J98DAAA2H+IA
+ADCIAwDAIA4AAIM4AAAM4gAAMIgDAMAgDgAAgzgAAIyCfA+wWnv27FF5eXm+
+xwCALeXWrVu6ffv2sttt2TiUl5crmUzmewwA2FKCweCKtuOwEgDAIA4AAIM4
+AAAM4gAAMIgDAMAgDgAAgzgAAAziAAAwtuxFcMCT4jjOE3kcvs4dmwlxAJbx
+uE/ajuPwRI8tj8NKAACDOAAADOIAADCIAwDAIA4AAIM4AAAM4gAAMIgDAMBY
+Ng5TU1M6evSoDhw4oIqKCn399deSpPn5eYVCIQUCAYVCIWWzWUkPLhjq7u6W
+3+9XdXW1bt68mbuveDyuQCCgQCCgeDyeW79x44aqqqrk9/vV3d3NBUQAkGfL
+xqGgoEBffvmlfvnlF42OjurChQuamJhQNBpVXV2dUqmU6urqFI1GJUlDQ0NK
+pVJKpVKKxWLq6uqS9CAmkUhE169f19jYmCKRSC4oXV1disViudslEokN3GUA
+wHKWjYPX69Urr7wiSdq1a5cOHDigdDqtgYEBtbW1SZLa2trU398vSRoYGFBr
+a6scx9GhQ4e0sLCgTCaj4eFhhUIheTweFRYWKhQKKZFIKJPJ6M6dOzp8+LAc
+x1Fra2vuvgAA+fFYn61069Yt/fTTTzp48KBmZmbk9XolPQjI7OysJCmdTqus
+rCx3G5/Pp3Q6/ch1n89n1h8mFospFotJkubm5h5ndADAY1jxCek///xTx48f
+11dffaVnn312ye0edr5gqQ8ie9T6w3R2diqZTCqZTKqoqGilowMAHtOK4vDP
+P//o+PHjeu+99/TWW29JkkpKSpTJZCRJmUxGxcXFkh785j81NZW77fT0tEpL
+Sx+5Pj09bdYBAPmzbBxc19XJkyd14MABffjhh7n1xsbG3DuO4vG4mpqacuu9
+vb1yXVejo6PavXu3vF6vwuGwRkZGlM1mlc1mNTIyonA4LK/Xq127dml0dFSu
+66q3tzd3XwCA/Fj2nMO1a9f07bffqqqqSjU1NZKkzz77TGfOnFFzc7N6enq0
+d+9eXblyRZLU0NCgwcFB+f1+7dy5U5cuXZIkeTwenT17VrW1tZKkc+fOyePx
+SJIuXryo9vZ23b17V/X19aqvr9+QnQUArIzjbtGLCoLBoJLJZL7HAAy+7Aeb
+2UqfO7lCGgBgEAcAgEEcAAAGcQAAGMQBAGAQBwCAQRwAAAZxAAAYxAEAYBAH
+AIBBHAAABnEAABjEAQBgEAcAgEEcAAAGcQAAGMQBAGAQBwCAQRwAAAZxAAAY
+xAEAYBAHAIBBHAAABnEAABjEAQBgEAcAgEEcAAAGcQAAGMQBAGAQBwCAQRwA
+AAZxAAAYxAEAYBAHAIBBHAAABnEAABjEAQBgLBuHjo4OFRcXq7KyMrf26aef
+6vnnn1dNTY1qamo0ODiY+7fPP/9cfr9f+/fv1/DwcG49kUho//798vv9ikaj
+ufXJyUkdPHhQgUBA77zzju7du7de+wYAWKVl49De3q5EImHWT58+rfHxcY2P
+j6uhoUGSNDExob6+Pv38889KJBL64IMPtLi4qMXFRZ06dUpDQ0OamJjQ5cuX
+NTExIUn6+OOPdfr0aaVSKRUWFqqnp2eddxEA8LiWjcORI0fk8XhWdGcDAwNq
+aWnRf/7zH73wwgvy+/0aGxvT2NiY/H6/9u3bpx07dqilpUUDAwNyXVc//PCD
+3n77bUlSW1ub+vv717ZHAIA1W/U5h/Pnz6u6ulodHR3KZrOSpHQ6rbKystw2
+Pp9P6XR6yfXff/9dzz33nAoKCv61vpRYLKZgMKhgMKi5ubnVjg4AWMaq4tDV
+1aXffvtN4+Pj8nq9+uijjyRJruuabR3Heez1pXR2diqZTCqZTKqoqGg1owMA
+VqBgNTcqKSnJ/fz+++/rzTfflPTgN/+pqancv01PT6u0tFSSHrq+Z88eLSws
+6P79+yooKPjX9gCA/FnVK4dMJpP7+fvvv8+9k6mxsVF9fX36+++/NTk5qVQq
+pddee021tbVKpVKanJzUvXv31NfXp8bGRjmOo6NHj+q7776TJMXjcTU1Na3D
+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
+" /></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">17</span><span style=" color:#000080;">]:</span> required=['Occupation_0', 'Occupation_1',</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>        'Occupation_2', 'Occupation_3', 'Occupation_4', 'Occupation_5',</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>        'Occupation_6', 'Occupation_7', 'Occupation_8', </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>        'Occupation_12', </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>        'Occupation_14', 'Occupation_15',  'Occupation_17',</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>        'Occupation_18', 'Purchase']</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">18</span><span style=" color:#000080;">]:</span> data2 = pd.DataFrame(data_new,columns = required)</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">19</span><span style=" color:#000080;">]:</span> corrmat = data2.corr()</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span> print(corrmat)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">               Occupation_0  Occupation_1    ...     Occupation_18  Purchase</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_0       1.000000     -0.116928    ...         -0.042047 -0.010648</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_1      -0.116928      1.000000    ...         -0.033913 -0.019846</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_2      -0.085770     -0.069177    ...         -0.024876 -0.014871</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_3      -0.069333     -0.055920    ...         -0.020109 -0.003049</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_4      -0.148227     -0.119551    ...         -0.042990 -0.002670</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_5      -0.057326     -0.046235    ...         -0.016626  0.002672</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_6      -0.074648     -0.060207    ...         -0.021650 -0.000178</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_7      -0.132182     -0.106610    ...         -0.038337  0.011919</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_8      -0.020224     -0.016312    ...         -0.005866  0.003053</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_12     -0.093283     -0.075236    ...         -0.027055  0.025872</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_14     -0.087021     -0.070186    ...         -0.025239  0.010928</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_15     -0.057212     -0.046144    ...         -0.016593  0.015085</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_17     -0.106698     -0.086056    ...         -0.030946  0.031947</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_18     -0.042047     -0.033913    ...          1.000000 -0.001831</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Purchase          -0.010648     -0.019846    ...         -0.001831  1.000000</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">[15 rows x 15 columns]</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">20</span><span style=" color:#000080;">]:</span> data_new1  = data_new[['Occupation_4','Occupation_5','Occupation_6', 'Occupation_7','Occupation_8', 'Occupation_12', </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>        'Occupation_14', 'Occupation_15', 'Occupation_17','Occupation_18',</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>      'Purchase','Product_Category_1'</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>        ,'Product_Category_2','Product_Category_3','Age1','Gender1','City_Category1','Marital_Status']]</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span> </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span> data_new1.info()</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;class 'pandas.core.frame.DataFrame'&gt;</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Int64Index: 547391 entries, 0 to 550067</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Data columns (total 18 columns):</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_4          547391 non-null uint8</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_5          547391 non-null uint8</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_6          547391 non-null uint8</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_7          547391 non-null uint8</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_8          547391 non-null uint8</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_12         547391 non-null uint8</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_14         547391 non-null uint8</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_15         547391 non-null uint8</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_17         547391 non-null uint8</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_18         547391 non-null uint8</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Purchase              547391 non-null int64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Product_Category_1    547391 non-null int64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Product_Category_2    547391 non-null float64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Product_Category_3    547391 non-null float64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Age1                  547391 non-null int64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Gender1               547391 non-null int64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">City_Category1        547391 non-null int64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Marital_Status        547391 non-null int64</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">dtypes: float64(2), int64(6), uint8(10)</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">memory usage: 42.8 MB</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">21</span><span style=" color:#000080;">]:</span> import statsmodels.api as sm</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">22</span><span style=" color:#000080;">]:</span> X = sm.add_constant( data_new1 )</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span> Y = data_new1['Purchase']</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">23</span><span style=" color:#000080;">]:</span> from sklearn.model_selection import train_test_split</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span> train_X, test_X, train_y, test_y = train_test_split( X ,Y,train_size = 0.8,random_state = 42 )</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">C:\Users\GIM\Anaconda3\lib\site-packages\sklearn\model_selection\_split.py:2179: FutureWarning: From version 0.21, test_size will always complement train_size unless both are specified.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">  FutureWarning)</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">24</span><span style=" color:#000080;">]:</span> model_1 = sm.OLS(train_y, train_X.astype(float)).fit()</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span> model_1.summary2()</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#8b0000;">Out[</span><span style=" font-weight:600; color:#8b0000;">24</span><span style=" color:#8b0000;">]:</span> </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;class 'statsmodels.iolib.summary2.Summary'&gt;</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&quot;&quot;&quot;</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">                         Results: Ordinary least squares</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">==================================================================================</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Model:                   OLS                 Adj. R-squared:        1.000         </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Dependent Variable:      Purchase            AIC:                   -20176973.0559</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Date:                    2020-02-27 19:32    BIC:                   -20176764.2502</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">No. Observations:        437912              Log-Likelihood:        1.0089e+07    </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Df Model:                18                  F-statistic:           1.036e+33     </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Df Residuals:            437893              Prob (F-statistic):    0.00          </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">R-squared:               1.000               Scale:                 5.7176e-22    </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">----------------------------------------------------------------------------------</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">                    Coef.  Std.Err.            t            P&gt;|t|   [0.025  0.975]</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">----------------------------------------------------------------------------------</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">const              -0.0000   0.0000                -95.5253 0.0000 -0.0000 -0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_4        0.0000   0.0000                502.1905 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_5        0.0000   0.0000                 46.3179 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_6        0.0000   0.0000                 18.0405 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_7        0.0000   0.0000                186.4556 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_8       -0.0000   0.0000               -201.9647 0.0000 -0.0000 -0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_12      -0.0000   0.0000                -26.5235 0.0000 -0.0000 -0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_14      -0.0000   0.0000                 -1.8430 0.0653 -0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_15       0.0000   0.0000                114.9229 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_17       0.0000   0.0000                206.7093 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_18      -0.0000   0.0000               -169.9627 0.0000 -0.0000 -0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Purchase            1.0000   0.0000 124418191086890816.0000 0.0000  1.0000  1.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Product_Category_1  0.0000   0.0000                  2.6716 0.0076  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Product_Category_2 -0.0000   0.0000                 -9.5463 0.0000 -0.0000 -0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Product_Category_3 -0.0000   0.0000                -10.8451 0.0000 -0.0000 -0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Age1                0.0000   0.0000                 21.8355 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Gender1             0.0000   0.0000                  7.5698 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">City_Category1      0.0000   0.0000                 15.4201 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Marital_Status      0.0000   0.0000                  8.1669 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">----------------------------------------------------------------------------------</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Omnibus:                  45856.782          Durbin-Watson:             1.915     </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Prob(Omnibus):            0.000              Jarque-Bera (JB):          401366.974</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Skew:                     0.064              Prob(JB):                  0.000     </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Kurtosis:                 7.688              Condition No.:             196977    </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">==================================================================================</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">* The condition number is large (2e+05). This might indicate             strong</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">multicollinearity or other numerical problems.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&quot;&quot;&quot;</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">25</span><span style=" color:#000080;">]:</span> var=data_new[['Occupation_7','Occupation_8', 'Occupation_12',</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>        'Occupation_14', 'Occupation_15', 'Occupation_16', 'Occupation_17',</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>      'Purchase','Product_Category_1'</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>        ,'Product_Category_2','Product_Category_3','Age1','Gender1','City_Category1','Marital_Status']]</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">26</span><span style=" color:#000080;">]:</span> X = sm.add_constant( var )</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">27</span><span style=" color:#000080;">]:</span> Y = var['Purchase']</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">28</span><span style=" color:#000080;">]:</span> model_2 = sm.OLS(train_y, train_X).fit()</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">29</span><span style=" color:#000080;">]:</span> model_2.summary2()</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#8b0000;">Out[</span><span style=" font-weight:600; color:#8b0000;">29</span><span style=" color:#8b0000;">]:</span> </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;class 'statsmodels.iolib.summary2.Summary'&gt;</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&quot;&quot;&quot;</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">                         Results: Ordinary least squares</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">==================================================================================</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Model:                   OLS                 Adj. R-squared:        1.000         </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Dependent Variable:      Purchase            AIC:                   -20176973.0559</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Date:                    2020-02-27 19:32    BIC:                   -20176764.2502</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">No. Observations:        437912              Log-Likelihood:        1.0089e+07    </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Df Model:                18                  F-statistic:           1.036e+33     </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Df Residuals:            437893              Prob (F-statistic):    0.00          </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">R-squared:               1.000               Scale:                 5.7176e-22    </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">----------------------------------------------------------------------------------</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">                    Coef.  Std.Err.            t            P&gt;|t|   [0.025  0.975]</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">----------------------------------------------------------------------------------</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">const              -0.0000   0.0000                -95.5253 0.0000 -0.0000 -0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_4        0.0000   0.0000                502.1905 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_5        0.0000   0.0000                 46.3179 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_6        0.0000   0.0000                 18.0405 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_7        0.0000   0.0000                186.4556 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_8       -0.0000   0.0000               -201.9647 0.0000 -0.0000 -0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_12      -0.0000   0.0000                -26.5235 0.0000 -0.0000 -0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_14      -0.0000   0.0000                 -1.8430 0.0653 -0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_15       0.0000   0.0000                114.9229 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_17       0.0000   0.0000                206.7093 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Occupation_18      -0.0000   0.0000               -169.9627 0.0000 -0.0000 -0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Purchase            1.0000   0.0000 124418191086890816.0000 0.0000  1.0000  1.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Product_Category_1  0.0000   0.0000                  2.6716 0.0076  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Product_Category_2 -0.0000   0.0000                 -9.5463 0.0000 -0.0000 -0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Product_Category_3 -0.0000   0.0000                -10.8451 0.0000 -0.0000 -0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Age1                0.0000   0.0000                 21.8355 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Gender1             0.0000   0.0000                  7.5698 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">City_Category1      0.0000   0.0000                 15.4201 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Marital_Status      0.0000   0.0000                  8.1669 0.0000  0.0000  0.0000</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">----------------------------------------------------------------------------------</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Omnibus:                  45856.782          Durbin-Watson:             1.915     </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Prob(Omnibus):            0.000              Jarque-Bera (JB):          401366.974</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Skew:                     0.064              Prob(JB):                  0.000     </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Kurtosis:                 7.688              Condition No.:             196977    </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">==================================================================================</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">* The condition number is large (2e+05). This might indicate             strong</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">multicollinearity or other numerical problems.</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&quot;&quot;&quot;</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">30</span><span style=" color:#000080;">]:</span> from sklearn.model_selection import train_test_split</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">31</span><span style=" color:#000080;">]:</span> train_X, test_X, train_y, test_y = train_test_split( X ,Y,train_size = 0.8,random_state = 42 )</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">32</span><span style=" color:#000080;">]:</span> from statsmodels.stats.outliers_influence import variance_inflation_factor</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">33</span><span style=" color:#000080;">]:</span> def get_vif_factors( X ):</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     X_matrix = X.as_matrix()</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     vif = [ variance_inflation_factor( X_matrix, i ) for i in range( X_matrix.shape[1] ) ]</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     vif_factors = pd.DataFrame()</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     vif_factors['column'] = X.columns</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     vif_factors['vif'] = vif</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     return vif_factors</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">34</span><span style=" color:#000080;">]:</span> vif_factors = get_vif_factors(X [X.columns] )</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span> vif_factors</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">__main__:2: FutureWarning: Method .as_matrix will be removed in a future version. Use .values instead.</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#8b0000;">Out[</span><span style=" font-weight:600; color:#8b0000;">34</span><span style=" color:#8b0000;">]:</span> </p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">                column        vif</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0                const  18.014856</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1         Occupation_7   1.068936</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2         Occupation_8   1.005244</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">3        Occupation_12   1.040132</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4        Occupation_14   1.025103</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5        Occupation_15   1.013846</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">6        Occupation_16   1.047140</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">7        Occupation_17   1.057575</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">8             Purchase   1.204447</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">9   Product_Category_1   1.294883</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">10  Product_Category_2   1.011506</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">11  Product_Category_3   1.222498</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">12                Age1   1.168450</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">13             Gender1   1.034008</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">14      City_Category1   1.023315</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">15      Marital_Status   1.109757</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">35</span><span style=" color:#000080;">]:</span> columns_with_large_vif = vif_factors[vif_factors.vif &gt; 4].column</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">36</span><span style=" color:#000080;">]:</span> def draw_pp_plot(model_1 , title ):</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     probplot = sm.ProbPlot( model_1 .resid );</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     plt.figure( figsize = (8, 6) );</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     probplot.ppplot( line='45' );</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     plt.title( title );</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">    ...:</span>     plt.show();</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">37</span><span style=" color:#000080;">]:</span> draw_pp_plot( model_1 ,&quot;Figure 4.6 - Normal P-P Plot of Regression Standardized Residuals&quot;);</p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;Figure size 576x432 with 0 Axes&gt;</p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAaAAAAEWCAYAAAAgpUMxAAAACXBIWXMAAAsS
+AAALEgHS3X78AAAAO3pUWHRTb2Z0d2FyZQAACJnLTSwpyMkvyclMUihLLSrO
+zM9TMNYz0DPSUcgoKSmw0tfPhSvQyy9K1wcApwUQ8aaEwSQAACAASURBVHic
+7N15XBTlH8DxzwZqKojgkSJ4UigYeID3bWaHkVbifZZoaqkdWr8Stay0LMtb
+1ETTxCMNVDzS1DTxvkI08UIONS8UVETg+f0xsYEci8Ducnzfrxfl7szOfPeZ
+Yb48M8+hU0ophBBCCBN7wtwBCCGEKJ4kAQkhhDALSUBCCCHMQhKQEEIIs5AE
+JIQQwiwkAQkhhDCLfE9Aly5dwsrKiuTk5PzetMhnNWvWZNu2beYOIx2dTsfZ
+s2eNvh+lFIMGDcLW1pYmTZoYfX/mYGVlxfnz580dRr7auXMnDg4O+ba9ixcv
+otPpSEpKAuDFF19kyZIl+bZ9gIkTJ9K3b9983aYhu3fvxtnZOcvlAwcO5NNP
+P83zfh4tv8eV6wRUs2ZNSpcujZWVlf4nJiaG6tWrEx8fj4WFRW43bRSTJk1C
+p9MZvOD+8MMP1KpVi7Jly1KvXj3OnDmTq/3t3LkTnU7HiBEj0r3fqlUr/P39
+c7VNUxo4cCAlS5bEysoKOzs7OnXqxOnTpzNdN/UkTD0PatasyZQpU/K8bnb8
+/f1p1arVY38u1Z49e/jtt9+IioriwIEDmW7fwsICKysrypUrh7u7Oxs2bMj1
+/swhPj6e2rVr5/t29+zZQ4sWLbCxscHOzo6WLVty8OBBIO/Hxdw2bdrEgAED
+TLa/nTt38sQTT2BlZYW1tTXOzs4sXrw4z9tt3bo1f//9dz5EaFx5qgGtX7+e
++Ph4/Y+9vX1+xZWp3GbZc+fOsWbNGqpWrZrtegsXLmTRokVs3LiR+Ph4NmzY
+QMWKFXO1T4CyZcuydOlSLl68mOttpMrtd8+LsWPHEh8fT1RUFJUrV2bgwIHZ
+rh8bG0t8fDwrVqzgs88+Y/PmzfmyrjFERERQs2ZNypYtm+U6zZs3Jz4+ntjY
+WIYPH07Pnj2JjY3N91jMcWxz686dO3Tp0oV33nmHmzdvEh0dzYQJEyhVqpS5
+QzOooJazvb098fHx3Llzh+nTpzNkyJBCkTzyQ77fgnu0SnbhwgXatGmDtbU1
+zz33HCNGjNBXRzOrTqe9LTRx4kTeeOMN+vbtS7ly5fD39yclJYUpU6ZQp04d
+KlSogLe3Nzdv3sw2ppEjRzJ16lRKliyZ5TopKSlMmjSJ6dOn4+Ligk6no06d
+OtjZ2eW6LMqXL8/AgQOZNGlSlvucPHkyNWrUoHLlyvTv35/bt28D/5XjokWL
+qF69Oh06dNC/t3jxYhwdHbG1tWXevHkcPHgQNzc3ypcvz8iRI/XbP3fuHB06
+dKBChQpUrFiRPn365OoCWqZMGXr37k1oaGiO1m/evDmurq45Wj+7dW/fvk3/
+/v2pVKkSNWrUYPLkyaSkpHDq1CmGDRtGSEgIVlZWlC9fPtNtx8TE4OXlhZ2d
+HU5OTixYsACARYsW8dZbb+k/P2HChGxjfOKJJ+jXrx93794lPDxc//6+ffto
+0aIF5cuXx93dnZ07d+qXZXfeZ3ZsDW3P39+f2rVrY21tTa1atVi+fDkAZ8+e
+pW3bttjY2FCxYkV69Oih/0za25lZlWXqtlu1asUHH3yAra0ttWrVYtOmTZmW
+ReodgV69emFhYUHp0qV5/vnncXNzy/K4bNy4kYYNG1KuXDkcHR2ZOHGifnup
+ZbFkyRKqV69OxYoV+eKLL/TL79+/z8CBA7G1tcXFxUVf00qVei2wtrbGxcWF
+devWpSuzli1bMmbMGOzs7Jg4cSLJycl88MEHVKxYkdq1a7Nx48Z022vXrh0L
+Fy4EwN3dPd0dHp1Opz8mho5927Ztsba2plOnTly/fj3TsnyUTqfjpZdews7O
+jhMnTujfP336NJ06dcLOzg5nZ2dWrVqlXxYcHIyLiwvW1tZUq1aNadOmARmv
+rUePHqVRo0ZYW1vTo0cPEhIS0pXTo7XWtOdOdsfvUVmdp1lSuVSjRg3122+/
+ZXj/woULClAPHz5USinVrFkz9f7776sHDx6o3bt3K2tra9WnTx+llFI7duxQ
+1apVy3K7EyZMUJaWlmrdunUqOTlZ3bt3T02fPl01bdpURUZGqoSEBOXj46N6
+9uyZZZyrVq1SXl5e2caslFIREREKUN9//71ycHBQNWvWVL6+vio5OfnxCyfN
+d7t8+bKytrZWp0+fVkop1bJlS7V48WKllFKLFi1SderUUefOnVNxcXGqW7du
+qm/fvunKsV+/fio+Pl7du3dP/97QoUPV/fv31ZYtW1SpUqXUq6++qq5evaqi
+oqJUpUqV1M6dO5VSSoWHh6utW7eqhIQE9c8//6jWrVurUaNGZVrWjxowYID6
+5JNPlFJKxcXFqV69eqlWrVplum7aY56SkqL27NmjSpcurbZt2/bY6wIqPDxc
+KaVUv379lJeXl7pz5466cOGCevrpp9XChQuVUkotXrxYtWzZMttj0KZNG/X2
+22+r+/fvq6NHj6qKFSvq92Po82mXJyUlqVmzZqkSJUqoq1evKqWUioqKUnZ2
+dmrjxo0qOTlZbd26VdnZ2al//vlHKZX9eZ/Zsc1ue/Hx8enOoZiYGBUaGqqU
+Uqpnz55q8uTJKjk5Wd2/f1/t3r1b/x0epywtLS2Vn5+fSkpKUnPmzFFVq1ZV
+KSkpGcrl9u3bys7OTvXv318FBwermzdvZlluqXbs2KFOnDihkpOT1fHjx1Xl
+ypXVunXr0pXFW2+9pe7du6eOHTumSpYsqcLCwpRSSo0bN061atVK3bhxQ126
+dEm5urqmu2asWrVKRUdHq+TkZBUQEKDKlCmjYmJi9LFYWFioGTNmqIcPH6p7
+9+6puXPnKmdnZ3Xp0iV148YN1a5du3TXq7Zt26oFCxZk+N7z589Xzs7O6vbt
+2zk69mPGjFEJCQlq165dysrKSn/sH5X2GpicnKwCAwOVTqdTR44cUUopFR8f
+rxwcHNSPP/6oHj58qA4fPqwqVKigP/5VqlRRf/zxh1JKqZs3b6rDhw9n2O6D
+Bw9U9erV1XfffacSExPV6tWrlaWlpf73O7Njlvbcycnxe/jwYbbnaVbylIDK
+li2rbGxslI2NjXr11VczBBQREaEsLCzU3bt39Z/r06fPYyWg1q1bp1tet27d
+dBe2mJgYZWlpqT+B0oqLi1NOTk7q/PnzGbb9qD///FMB6qWXXlK3bt3S/5L6
++fk9btFk+G4ffvih8vb2VkqlT0AdOnRQs2fP1n/m9OnT+u+SWo7nzp3TL099
+LyoqSv+enZ2dCggI0L9+7bXX1PTp0zONad26dapBgwb614YSUKlSpZSNjY16
+6qmn1CuvvKLOnj2b6bqpcdnY2Kjy5curunXrqh9++CFX66ae+ElJSapkyZLq
+5MmT+mXz5s1Tbdu2VUoZTiCXLl1STzzxhLpz547+vY8++kgNGDAgR59PvXjZ
+2NgoS0tL9eSTT6qVK1fql0+ZMkX/x0Kq559/Xvn7+xs87zM7ttltLz4+XtnY
+2Kg1a9aoe/fupVunX79+asiQISoyMjLDd3icsqxTp45+2d27dxWgLl++nGnZ
+hIWFqQEDBqhq1aopCwsL9corr6grV67ot2XoD4NRo0ap0aNHpyuLtPF7enqq
+FStWKKWUqlWrltq0aZN+2fz58zNcM9Jyd3dXv/76qz4WR0fHdMvbt2+v5s6d
+q3+9ZcsWgwlo9+7dqlKlSurvv/9WSuXs2MfHx+uX9erVK9sEpNPplI2NjSpZ
+sqR64okn0v3+BgQEZPjDz8fHR02cOFEppZSjo6OaN2+eun37dobtppbTrl27
+MvxB0bx58xwnoEdldvxSE1BW52lW8nQL7tdffyU2NpbY2Fh+/fXXDMtjYmKw
+s7OjTJky+vccHR0fax+Prh8REUG3bt0oX7485cuXp169elhYWHD16tUMn50w
+YQL9+vWjVq1aBvdTunRpQHvuUb58eWrWrMnQoUMJDg7OdP20VfNLly5lu+1x
+48axZcsWjh8/nu79mJgYatSooX9do0YNkpKS0n2XzMrrqaeeShf3o6/j4+MB
++Oeff+jZsyfVqlWjXLly9O3bN8e3AwA++OADYmNjuXLlCkFBQdSpUyfb7379
++nVu3brFqVOnePfdd7PdtqF1r1+/TmJiYobyiY6OzlHsqeeetbV1rj4P0KxZ
+M2JjY7l16xZeXl7s3r1bvywiIoLVq1frz8Py5cuzZ88eLl++nOPzPu172W2v
+bNmyrFy5knnz5lG1alVefvllfYOQr7/+GqUUTZo0wdXVlR9//DHDfnJSllWq
+VNH/OzXu1PPoUfXq1cPf35+oqChCQ0OJiYlh9OjRWZbj/v37ad++PZUqVcLG
+xoZ58+ZlOA8f3X/qvmNiYtKVU9rvALB06VIaNGigL7PQ0NB023603A1t71GR
+kZF4e3uzZMkSnnnmGcDwsbe1tU33bNHQPuzt7YmNjeXOnTu8++67/P777/pl
+ERER7N+/P92+li9fzpUrVwD45ZdfCA4OpkaNGrRt25aQkJAM24+JiaFatWro
+dLocx5RWTo4fkO15mhWj9gOqWrUqN2/e5N69e/r3IiMj9f8uW7ZsumXJyclc
+u3Yt3TbSFhpoJ9SmTZv0iS82NpaEhASqVauWYf/bt29nxowZVKlShSpVquhP
+pqlTp2ZY19nZmZIlS2bYX1bSNr6oXr16tutWqFCB0aNHM378+HTv29vbExER
+oX996dIlLC0t0yWUnMaTmY8//hidTseJEye4c+cOy5YtQ+XD4OeP891zq2LF
+ipQoUSJD+aQeZ0PlYm9vz82bN4mLi8v084/DysqKOXPm8NNPP3H06FFAOw/7
+9euX7jy8e/cuH330kcHzPlXa75Dd9gA6d+7Mb7/9xuXLl6lbty5DhgwBtAv3
+ggULiImJYf78+QwfPjxDM3ZDZZkXdevWZeDAgfpneJkdl969e+Pl5UVkZCS3
+b99m2LBhOT4Pq1atmq7s0v7BExERwZAhQ5g1axY3btwgNjaW+vXrp9v2o/Fk
+t71H3b9/n65duzJ69GhefPFF/fuGjv2tW7e4e/dujvaRVqlSpZg6dSp//fWX
+/g96R0dH2rZtm25f8fHxzJ07FwBPT08CAwP5559/6Nq1K97e3hm2W7VqVaKj
+o9OVS9qYHr0Opya3VI9z/LI6T7Ni1ARUo0YNPDw8mDhxIomJiYSEhLB+/Xr9
+8meeeYaEhAQ2btzIw4cPmTx5Mg8ePMh2m8OGDeOTTz7R/zJdu3aNwMDATNfd
+vn07oaGhHDt2jGPHjmFvb8/8+fMzNI0G7a+uHj168PXXXxMXF0dUVBQLFiyg
+S5cueSiB/7z33nvs3buXU6dO6d/r1asX06dP58KFC8THx/O///2PHj16YGlp
+mS/7jIuL0z8Mjo6O5ptvvsmX7ZqChYUF3t7efPLJJ8TFxREREcF3332nf5D/
+1FNPERUVRWJiYqafd3R0pEWLFnz88cckJCRw4sQJFi1aRJ8+fXIVT4UKFXjr
+rbf47LPPAOjbty/r169ny5YtJCcnk5CQwM6dO4mKijJ43mcmu+1dvXqVoKAg
+7t69S6lSpbCystJ3c1i9ejVRUVEA2NraotPpMnSBMFSWj+P06dN8++23+n1G
+RkayYsUKmjVrBmR+XOLi4rCzs+PJJ5/kwIED/Pzzzznen7e3N1999RW3bt0i
+KiqKmTNn6pfdvXsXnU5HpUqVAFi8eLHBhi/e3t7MmDGDqKgobt26lW0XgMGD
+B1O3bl3Gjh2b7v2cHPsJEyaQmJjInj17DB77tEqWLMn777+vP8+6dOnCmTNn
++Omnn3j48CEPHz7k4MGDnDp1isTERJYvX87t27cpUaIE5cqVy7T7S/PmzbG0
+tGTGjBkkJSWxdu3adF0P3N3dOXnyJMeOHSMhISFDI4OcHr/sztOsGH0khOXL
+lxMSEkKFChX49NNP6dGjh77Jpo2NDXPmzOGtt96iWrVqlC1b1mAns1GjRuHl
+5cXzzz+PtbU1zZo1Y//+/ZmuW6FCBX3tp0qVKlhYWGBra4uVlRWgJbNhw4bp
+1581axZWVlbY29vTvHlzevfuzeDBg/OlHMqVK8fYsWPTtdgbPHgw/fr1o02b
+NtSqVYsnn3wy3S9YXk2YMIEjR45gY2PDyy+/zGuvvZZv2zaFmTNnUrZsWWrX
+rk2rVq3SHY8OHTrg6upKlSpVsmwqv2LFCi5evIi9vT3dunVj0qRJdOrUKdfx
+jB49muDgYE6cOIGjoyOBgYF8+eWXVKpUCUdHR7755ht9y7LszvvMZLe9lJQU
+vv32W+zt7bGzs2PXrl3MmTMHgIMHD9K0aVOsrKzw8vLS92N7nLJ8HNbW1uzf
+v5+mTZtStmxZmjVrRv369fn222+BzI/LnDlz8PX1xdrams8++yzTv9KzMmHC
+BGrUqEGtWrV4/vnn6devn36Zi4sL77//Ps2bN+epp57ir7/+omXLltlub8iQ
+IXTu3Bl3d3caNWqU7e9EQEAA69atS3fLeffu3QaP/c8//8z+/fuxs7Nj0qRJ
+9O/fP8ffF7TrwqVLl1i/fj3W1tZs3bqVgIAA7O3tqVKlCuPGjdP/of7TTz9R
+s2ZNypUrx7x581i2bFmG7ZUsWZK1a9fi7++Pra0tK1euTPe9n3nmGXx9fXnu
+ued4+umnM7SIy+nxy+48zYpO5cc9mcfQo0cP6tatm2XTZCGKIjnvhcjI6DWg
+gwcPcu7cOVJSUti8eTOBgYF07drV2LsVwqzkvBfCsPx52JCJwYMHs2HDBkqX
+Lk1KSgo3btzAwcGBuXPn0rBhQ5RSjBo1iuDgYMqUKYO/vz+NGjUyVjhCmNSV
+K1d47bXXMpz3Qoj/GO0W3B9//IGVlRX9+/fP9MFgcHAwM2fOJDg4mP379zNq
+1Kgsn+UIIYQoeox2C65NmzbZDmMTGBhI//790el0+v4Wly9fNlY4QgghChij
+3YIzJDo6Ol2HMAcHB6KjozMdMNTPzw8/Pz9AawZat25dk8UphBCFweHDGd+z
+JAlHIrHjJoepgFI574huCmZLQJnd+cuqc6GPjw8+Pj4AeHh4cOjQIaPGJoQQ
+hU36y6eiJwHM4F1siOMLJnKYnPdHMhWzzYjq4OCQrkdyVFSU0adzEEKIoq4a
+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
+JCRw/fp1k8ZZEOT0emIy5nv8lLWHDx+qWrVqqfPnz+sfKoaGhqZbZ9asWeka
+IXTv3t0coRpdTsriyJEjqnbt2urMmTNmitI0clIWabVt27bINkLISVls2rRJ
+9e/fXyml1LVr15SDg4O6fv26OcI1qpyUxQsvvKAWL16slFIqLCxMVa1aVaWk
+pJghWuO7cOFClo0QNmzYkK4Rgqenp4mjS69AJiCltNYaTz/9tKpdu7aaPHmy
+Ukqp8ePHq8DAQKWUUvfv31dvvPGGqlOnjvL09FTnzp0zZ7hGZagsOnbsqCpX
+rqzc3d2Vu7u7euWVV8wZrlEZKou0inICUspwWaSkpKgxY8aoevXqqfr166sV
+K1aYM1yjMlQWJ0+eVC1atFBubm7K3d1dbdmyxZzhGk3Pnj1VlSpVlKWlpapW
+rZpauHChmjt3rpo7d65kUo5rAAAHI0lEQVRSSjsnhg8frmrXrq3q169v9t8P
+GYpHCCGEWRTIZ0BCCCGKPklAQgghzEISkBBCCLOQBCSEEMIsJAEJIYQwC0lA
+wmhu3LhBgwYNaNCgAVWqVKFatWo0aNCA8uXL4+LiYtJYjh07lm4E5KCgoGxH
+085OzZo1M+3EWLNmTZ599lnc3d15/vnnuXLlSr5sNysTJ05k2rRpGd6PiYnh
+jTfeAGDnzp36YYnSfudff/2VsLAw/Wd8fX3Ztm3bY8UrRF5JAhJGU6FCBY4d
+O8axY8cYNmwYY8aM0b82xhAoSUlJWS57NAF5eXnx0Ucf5XsMO3bs4Pjx43h4
+ePDll19mWJ6cnJzv+3yUvb09a9asyfB+2u/8aAL67LPPeO6554wemxBpSQIS
+ZpGcnMyQIUNwdXXl+eef5/79+wCcO3eOF154gcaNG9O6dWtOnz4NQEREBB07
+dtTPeXTp0iUABg4cyHvvvUf79u0ZN24cd+/eZfDgwXh6etKwYUMCAwNJTEzE
+19eXlStX0qBBA1auXIm/vz8jR44E4OrVq3Tr1g13d3fc3d3Zu3cvAF27dqVx
+48a4urri5+f3WN+vTZs2nD17FgArKyt8fX1p2rQpISEhbN++nYYNG/Lss88y
+ePBgHjx4oP/cN998Q5MmTWjSpIn+8+vXr6dp06Y0bNiQ5557jqtXr+rXP378
+OB06dODpp59mwYIFAFy8eDHT+WBSv/PevXsJCgriww8/pEGDBpw7d46BAwfq
+k9bhw4dp27YtjRs3pnPnzvrRkmfMmKGfd6pnz56PVR5CZMqs3WBFsTFhwgT1
+zTffKKW0oUIsLCzU0aNHlVJKde/eXf30009KKaU6dOigH1Jo3759qn379kop
+pbp06aL8/f2VUkotWrRIvfrqq0oppQYMGKBefvlllZSUpJRS6uOPP9Zv69at
+W+rpp59W8fHxavHixWrEiBH6eNK+9vb2VtOnT1dKaXPLxMbGKqWUunHjhlJK
+qXv37ilXV1f9MDY1atRQ165dy/Ad074/YsQINXbsWKWUUoBauXKlUkobwcPB
+wUH9/fffSiml+vXrp993jRo19L34lyxZol5++WWllFI3b97UDxuzYMEC9d57
+7+nL1M3NTd27d08/1E50dHS6oVh27Nih307a7zxgwAC1evVqfeyprxMTE1Xz
+5s3VP//8o5RSKiAgQA0aNEgppVTVqlVVQkKCvmyFyKsCORq2KPpq1apFgwYN
+AGjcuDEXL14kPj6evXv30r17d/16qbWDkJAQ1q5dC0C/fv0YO3asfp3u3btj
+YWEBwNatWwkKCtI/G0lISNDXlrLy+++/s3TpUgAsLCywsbEBtL/4161bB0Bk
+ZCTh4eFUqFAh2221b98eCwsL3NzcmDx5sn6br7/+OgB///03tWrV4plnngFg
+wIABzJ49m9GjRwPQq1cv/f/HjBkDaANG9ujRg8uXL5OYmEitWrX0+3v11Vcp
+Xbo0pUuXpn379hw4cEBfrrnx999/ExoaSqdOnQCtplq1alUA3Nzc6NOnD127
+dqVr16653ocQqSQBCbNIO2K3hYUF9+/fJyUlhfLly3Ps2DGDn087hHzZsmX1
+/1ZK8csvv+Ds7Jxu/f379z9WfDt37mTbtm2EhIRQpkwZ2rVrR0JCgsHP7dix
+g4oVK6Z778knn9QnSGVg5Ku03yv13++88w7vvfceXl5e7Ny5k4kTJ2a6fmav
+H5dSCldXV0JCQjIs27hxI3/88QdBQUF8/vnnnDx5EktLuYSI3JNnQKLAKFeu
+HLVq1WL16tWAdjE8fvw4AC1atCAgIACA5cuX06pVq0y30blzZ2bOnKm/0B89
+ehQAa2tr4uLiMv1Mx44dmTt3LqD9xX/nzh1u376Nra0tZcqU4fT/27tjFIWB
+MArADwvxDh5AQWdiEDUWInaCdcDCA9haWc0FtJCxlyDBQrDxBFqJF4hsIwiW
+IlhYKFHZQggruwsuyGZZ3tcEMiTkn+YxyZD/7Q3L5fIlNSaTSWw2m+D7juu6
+KJfLwfh4PA6OxWIRwL2DZzweBwAMh8OH+02nU5xOJ+z3e8znc+Ryuaee47v5
+SCQS2O12QQD5vg/P83C73bDdblGpVNDpdHA4HHA8Hn9YPdEjBhD9KaPRCIPB
+AIZhIJVKBa2V+/0+HMeBlBKu60Jr/eX1Sin4vg8pJdLpNJRSAO6vxlarVbAJ
+4SOtNWazGYQQyGaz8DwP1WoVl8sFUkoopWBZ1kvqi8VicBwHtm1DCIFIJIJm
+sxmMn89nFAoFaK3R6/UA3Ldb27aNUqn0aXWVz+dRq9VgWRaUUk/3dqnX6+h2
+uzBNE+v1OjgfjUYxmUzQbrdhGAYymQwWiwWu1ysajQaEEDBNE61W6981tqPf
+x79hExFRKLgCIiKiUDCAiIgoFAwgIiIKBQOIiIhCwQAiIqJQMICIiCgUDCAi
+IgrFO58RB50FQV+0AAAAAElFTkSuQmCC
+" /></p>
+<p style="-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /></p>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" color:#000080;">In [</span><span style=" font-weight:600; color:#000080;">38</span><span style=" color:#000080;">]:</span> </p></body></html>
